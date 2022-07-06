@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <label for="">
+      <span id="hr">00 </span>:
+      <span id="min">00 </span>:
+      <span id="sec">00 </span>
+    </label>
+    <br><br>
+    <br><br>
+    <div id="button">
+      <span><button id="lap">lap</button>
+        <button id="start">start</button>
+        <button id="reset">reset</button>
+        <button id="stop">stop</button>
+
+      </span>
+    </div>
+    <br><br>
+    <div id="ancestor">
+      
+    </div>
+
+
+
+  </div>
+  <script>
+    var lap = document.getElementById("lap");
+    var start = document.getElementById("start");
+    var reset = document.getElementById("reset");
+    var stop1 = document.getElementById("stop");
+    var hr = document.getElementById("hr");
+    var min = document.getElementById("min");
+    var sec = document.getElementById("sec");
+    let [second, minute, hour] = [0, 0, 0];
+
+    let int = null;
+
+    start.addEventListener('click', function () {
+      if (int != null) {
+        clearInterval(int);
+      }
+      
+       int = setInterval(Time, 10);
+
+    });
+    stop1.addEventListener('click', () => {
+      clearInterval(int);
+     
+    
+       
+       
+     
+       
+
+
+
+
+
+
+    });
+    lap.addEventListener('click', addme)
+
+
+    var m = null;
+    var s = null;
+    var h = null;
+
+    function Time() {
+      second += 1;
+      if (second == 60) {
+        minute++;
+        console.log(min);
+        second = 0;
+        if (minute == 60) {
+          hour++;
+          minute = 0;
+          if (hour == 24) {
+            hour = 0;
+          }
+        }
+      }
+
+      m = minute < 10 ? "0" + minute : minute;
+      s = second < 10 ? "0" + second : second;
+      h = hour < 10 ? "0" + hour : hour < 24 ? "0" + hour : hour;
+      hr.innerHTML = h;
+      min.innerHTML = m;
+      sec.innerHTML = s;
+    }
+
+
+
+    function addme() {
+     
+
+      if ((h !== 0) && (m !== 0) && (s !== 0) && int != null) {
+
+        var ancestor = document.getElementById("ancestor");
+        var k = document.createElement('div');
+        var hrspan = document.createElement('span');
+        hrspan.innerHTML = h + ": ";
+        var minspan = document.createElement('span');
+        minspan.innerHTML = m + ": ";
+        var secspan = document.createElement('span');
+        secspan.innerHTML = s;
+        k.appendChild(hrspan);
+        k.appendChild(minspan);
+        k.appendChild(secspan);
+        console.log(k);
+        ancestor.appendChild(k);
+
+      }
+     
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    reset.addEventListener('click', resettime);
+    function resettime() {
+      m = 0;
+      s = 0;
+      h = 0;
+      hr.innerHTML = "00";
+      min.innerHTML = "00";
+      sec.innerHTML = "00";
+     
+    }
+
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

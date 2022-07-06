@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+    display: flex;
+       justify-content: center;
+       align-items: center;
+    
+    
+}
+.container label {
+    
+    width: 100%;
+    font-size: 7rem;
+    color: wheat;
+    border: 1px solid white;
+    padding: 10px 70px;
+   
+}
+
+.container label span{
+    color:wheat;
+    font-size: 7rem;
+}
+.container{
+    padding: 30px 0px;
+    
+    margin: 0% 20%;
+
+}
+#ancestor div
+{
+    margin: 5px 0px;
+    padding: 2px 10px;
+    border: 1px solid rgb(46, 46, 46);
+
+}
+ #ancestor div span{
+    color: wheat;
+    font-size: 2rem;
+   
+}
+#button span{
+    display: flex;
+    justify-content: space-between;
+}
+#button span button{
+    padding: 10px 30px;
+    cursor: pointer;
+    border: 2px solid white;
+    background-color: transparent;
+    font-weight: 700;
+    color: white;
+}
+@media (max-width:1120px) {
+    .container{
+        padding: 30px 0px;
+        
+        margin: 0% 10%;
+    
+    }
+}
+@media (max-width:820px) {
+    .container{
+        padding: 30px 0px;
+        
+        margin: 0% 0%;
+    
+    }
+}
+@media (max-width:660px) {
+    .container label {
+    
+        width: 100%;
+        font-size: 3rem;
+        color: wheat;
+        border: 1px solid white;
+        padding: 10px 70px;
+       
+    }
+    
+    .container label span{
+        color:wheat;
+        font-size: 3rem;
+    }
+}
